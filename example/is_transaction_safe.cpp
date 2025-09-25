@@ -18,15 +18,15 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(ct::is_transaction_safe<int() transaction_safe>::value, "");
-static_assert(ct::is_transaction_safe<int(*)() transaction_safe>::value, "");
-static_assert(ct::is_transaction_safe<int(&)() transaction_safe>::value, "");
-static_assert(ct::is_transaction_safe<int(foo::*)() const transaction_safe>::value, "");
+static_assert(ct::is_transaction_safe<int() transaction_safe>::value);
+static_assert(ct::is_transaction_safe<int(*)() transaction_safe>::value);
+static_assert(ct::is_transaction_safe<int(&)() transaction_safe>::value);
+static_assert(ct::is_transaction_safe<int(foo::*)() const transaction_safe>::value);
 
-static_assert(!ct::is_transaction_safe<int()>::value, "");
-static_assert(!ct::is_transaction_safe<int(*)()>::value, "");
-static_assert(!ct::is_transaction_safe<int(&)()>::value, "");
-static_assert(!ct::is_transaction_safe<int(foo::*)() const>::value, "");
+static_assert(!ct::is_transaction_safe<int()>::value);
+static_assert(!ct::is_transaction_safe<int(*)()>::value);
+static_assert(!ct::is_transaction_safe<int(&)()>::value);
+static_assert(!ct::is_transaction_safe<int(foo::*)() const>::value);
 
 int main() {}
 //]

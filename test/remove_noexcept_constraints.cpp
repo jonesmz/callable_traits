@@ -34,18 +34,18 @@ int main() {
 
     auto lambda = [](){};
 
-    CT_ASSERT(is_substitution_failure_remove_noexcept<decltype(lambda)>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<decltype(lambda)&>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int &>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int (* const &)()>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int (foo::* &)()>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int (foo::* const)()>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int (foo::* const &)()>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<int (foo::* volatile)()>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<void>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<void*>::value);
-    CT_ASSERT(is_substitution_failure_remove_noexcept<void(**)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<decltype(lambda)>::value);
+    static_assert(is_substitution_failure_remove_noexcept<decltype(lambda)&>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int &>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int (* const &)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int (foo::* &)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int (foo::* const)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int (foo::* const &)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<int (foo::* volatile)()>::value);
+    static_assert(is_substitution_failure_remove_noexcept<void>::value);
+    static_assert(is_substitution_failure_remove_noexcept<void*>::value);
+    static_assert(is_substitution_failure_remove_noexcept<void(**)()>::value);
 }
 
 #endif //#ifndef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE

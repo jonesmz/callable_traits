@@ -44,23 +44,23 @@ int main() {
     {
         using pmf = decltype(&foo1::bar);
         using args_t =  TRAIT(args, pmf);
-        CT_ASSERT(is_same<args_t, std::tuple<foo1&, char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<foo1&, char, float&, int>>{});
     } {
         using pmf = decltype(&foo2::bar);
         using args_t =  TRAIT(args, pmf);
-        CT_ASSERT(is_same<args_t, std::tuple<foo2&, char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<foo2&, char, float&, int>>{});
     } {
         using args_t =  TRAIT(args, foo3);
-        CT_ASSERT(is_same<args_t, std::tuple<char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<char, float&, int>>{});
     } {
         using args_t =  TRAIT(args, foo4);
-        CT_ASSERT(is_same<args_t, std::tuple<char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<char, float&, int>>{});
     } {
         using args_t =  TRAIT(args, decltype(foo5));
-        CT_ASSERT(is_same<args_t, std::tuple<char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<char, float&, int>>{});
     } {
         using args_t =  TRAIT(args, decltype(foo6));
-        CT_ASSERT(is_same<args_t, std::tuple<char, float&, int>>{});
+        static_assert(is_same<args_t, std::tuple<char, float&, int>>{});
     }
 
     return 0;

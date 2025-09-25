@@ -13,8 +13,8 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(ct::is_const_member<int(foo::*)() const>::value, "");
-static_assert(!ct::is_const_member<int(foo::*)()>::value, "");
+static_assert(ct::is_const_member<int(foo::*)() const>::value);
+static_assert(!ct::is_const_member<int(foo::*)()>::value);
 
 int main() {}
 //]

@@ -8,12 +8,12 @@ struct foo;
 
 template<typename T>
 void assert_void_return() {
-    CT_ASSERT(has_void_return<T>::value);
+    static_assert(has_void_return<T>::value);
 }
 
 template<typename T>
 void assert_not_void_return() {
-    CT_ASSERT(!has_void_return<T>::value);
+    static_assert(!has_void_return<T>::value);
 }
 
 int main() {

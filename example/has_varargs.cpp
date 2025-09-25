@@ -16,8 +16,8 @@ int main(){}
 
 namespace ct = boost::callable_traits;
 
-static_assert(ct::has_varargs<int(...)>::value, "");
-static_assert(!ct::has_varargs<int()>::value, "");
+static_assert(ct::has_varargs<int(...)>::value);
+static_assert(!ct::has_varargs<int()>::value);
 
 int main() {}
 //]

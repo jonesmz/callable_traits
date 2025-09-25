@@ -19,13 +19,13 @@ namespace ct = boost::callable_traits;
 struct foo;
 
 static_assert(std::is_same_v<foo &,
-    ct::qualified_class_of_t<int(foo::*)()>>, "");
+    ct::qualified_class_of_t<int(foo::*)()>>);
     
 static_assert(std::is_same_v<foo const &,
-    ct::qualified_class_of_t<int(foo::*)() const>>, "");
+    ct::qualified_class_of_t<int(foo::*)() const>>);
 
 static_assert(std::is_same_v<foo volatile &&,
-    ct::qualified_class_of_t<int(foo::*)() volatile &&>>, "");
+    ct::qualified_class_of_t<int(foo::*)() volatile &&>>);
 
 int main() {}
 //]

@@ -13,10 +13,10 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(ct::is_cv_member<int(foo::*)() const volatile>::value, "");
-static_assert(!ct::is_cv_member<int(foo::*)()>::value, "");
-static_assert(!ct::is_cv_member<int(foo::*)() const>::value, "");
-static_assert(!ct::is_cv_member<int(foo::*)() volatile>::value, "");
+static_assert(ct::is_cv_member<int(foo::*)() const volatile>::value);
+static_assert(!ct::is_cv_member<int(foo::*)()>::value);
+static_assert(!ct::is_cv_member<int(foo::*)() const>::value);
+static_assert(!ct::is_cv_member<int(foo::*)() volatile>::value);
 
 int main() {}
 //]

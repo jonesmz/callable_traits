@@ -13,11 +13,11 @@ Distributed under the Boost Software License, Version 1.0.
 template<typename Noexcept, typename NotNoexcept>
 void test() {
 
-    CT_ASSERT( is_noexcept<Noexcept>::value
+    static_assert( is_noexcept<Noexcept>::value
         // for old compilers, TEST_NOEXCEPT_QUAL is empty so types are same
         || std::is_same_v<Noexcept, NotNoexcept>);
 
-    CT_ASSERT(! is_noexcept<NotNoexcept>::value);
+    static_assert(! is_noexcept<NotNoexcept>::value);
 }
 
 #define TEST_NOEXCEPT(not_noexcept) test<not_noexcept BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER, not_noexcept>()

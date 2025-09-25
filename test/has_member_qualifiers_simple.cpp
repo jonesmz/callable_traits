@@ -16,12 +16,12 @@ struct foo {};
 
 template<typename T>
 void assert_qualified() {
-    CT_ASSERT( has_member_qualifiers<T>::value);
+    static_assert( has_member_qualifiers<T>::value);
 }
 
 template<typename T>
 void assert_unqualified() {
-    CT_ASSERT(! has_member_qualifiers<T>::value);
+    static_assert(! has_member_qualifiers<T>::value);
 }
 
 int main() {

@@ -21,7 +21,7 @@ int main() {
         using f = int(int);
         using g = ct::apply_member_pointer_t<f, foo>;
         using expect = int(foo::*)(int);
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 
     {
@@ -29,7 +29,7 @@ int main() {
         using f = int(*)();
         using g = ct::apply_member_pointer_t<f, foo>;
         using expect = int(foo::*)();
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 
 
@@ -44,14 +44,14 @@ int main() {
             using f = int(*&)();
             using g = ct::apply_member_pointer_t<f, foo>;
             using expect = int (* foo::*)();
-            static_assert(std::is_same_v<g, expect>, "");
+            static_assert(std::is_same_v<g, expect>);
         }
 
         {
             using f = int(* const)();
             using g = ct::apply_member_pointer_t<f, foo>;
             using expect = int (* const foo::*)();
-            static_assert(std::is_same_v<g, expect>, "");
+            static_assert(std::is_same_v<g, expect>);
         }
     }
 
@@ -60,7 +60,7 @@ int main() {
         using f = void(&)();
         using g = ct::apply_member_pointer_t<f, foo>;
         using expect = void(foo::*)();
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 
     {
@@ -69,14 +69,14 @@ int main() {
         using f = int(bar::*)() const;
         using g = ct::apply_member_pointer_t<f, foo>;
         using expect = int(foo::*)() const;
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 
     {
         // non-callable type -> member data pointer type
         using g = ct::apply_member_pointer_t<int, foo>;
         using expect = int foo::*;
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 
 
@@ -87,7 +87,7 @@ int main() {
         using f = decltype(lambda);
         using g = ct::apply_member_pointer_t<f, foo>;
         using expect = f foo::*;
-        static_assert(std::is_same_v<g, expect>, "");
+        static_assert(std::is_same_v<g, expect>);
     }
 }
 //]

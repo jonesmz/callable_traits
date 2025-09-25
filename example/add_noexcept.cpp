@@ -20,7 +20,7 @@ using boost::callable_traits::add_noexcept_t;
 static_assert(std::is_same_v<
     add_noexcept_t<int()>,
     int() noexcept
->, "");
+>);
 
 int main() {}
 

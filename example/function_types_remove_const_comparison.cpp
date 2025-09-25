@@ -14,7 +14,7 @@ struct foo {
 
 using const_removed = boost::callable_traits::remove_member_const_t<decltype(&foo::bar)>;
 
-static_assert(std::is_same_v<const_removed, void(foo::*)()>, "");
+static_assert(std::is_same_v<const_removed, void(foo::*)()>);
 
 int main(){}
 

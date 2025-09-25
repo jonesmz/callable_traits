@@ -14,13 +14,13 @@ struct foo {};
 
 template<typename T>
 void assert_cv_qualified() {
-    CT_ASSERT( is_cv_member<T>());
+    static_assert( is_cv_member<T>());
 }
 
 
 template<typename T>
 void assert_not_cv_qualified() {
-    CT_ASSERT(! is_cv_member<T>());
+    static_assert(! is_cv_member<T>());
 }
 
 int main() {
@@ -97,18 +97,18 @@ int main() {
         using cvl = void() const volatile LREF;
         using cvr = void() const volatile RREF;
 
-        CT_ASSERT(! is_cv_member<f>());
-        CT_ASSERT(! is_cv_member<l>());
-        CT_ASSERT(! is_cv_member<r>());
-        CT_ASSERT(! is_cv_member<c>());
-        CT_ASSERT(! is_cv_member<cl>());
-        CT_ASSERT(! is_cv_member<cr>());
-        CT_ASSERT(! is_cv_member<v>());
-        CT_ASSERT(! is_cv_member<vl>());
-        CT_ASSERT(! is_cv_member<vr>());
-        CT_ASSERT( is_cv_member<cv>());
-        CT_ASSERT( is_cv_member<cvl>());
-        CT_ASSERT( is_cv_member<cvr>());
+        static_assert(! is_cv_member<f>());
+        static_assert(! is_cv_member<l>());
+        static_assert(! is_cv_member<r>());
+        static_assert(! is_cv_member<c>());
+        static_assert(! is_cv_member<cl>());
+        static_assert(! is_cv_member<cr>());
+        static_assert(! is_cv_member<v>());
+        static_assert(! is_cv_member<vl>());
+        static_assert(! is_cv_member<vr>());
+        static_assert( is_cv_member<cv>());
+        static_assert( is_cv_member<cvl>());
+        static_assert( is_cv_member<cvr>());
     }
 
 #endif

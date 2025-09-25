@@ -30,16 +30,16 @@ int main() {
 
     auto lambda = [](){};
 
-    CT_ASSERT(is_substitution_failure_class_of<decltype(lambda)>::value);
-    CT_ASSERT(is_substitution_failure_class_of<decltype(lambda)&>::value);
-    CT_ASSERT(is_substitution_failure_class_of<void>::value);
-    CT_ASSERT(is_substitution_failure_class_of<void*>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int &>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int()>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int(*)()>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int(**)()>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int(&)()>::value);
-    CT_ASSERT(is_substitution_failure_class_of<int (foo::** const)()>::value);
+    static_assert(is_substitution_failure_class_of<decltype(lambda)>::value);
+    static_assert(is_substitution_failure_class_of<decltype(lambda)&>::value);
+    static_assert(is_substitution_failure_class_of<void>::value);
+    static_assert(is_substitution_failure_class_of<void*>::value);
+    static_assert(is_substitution_failure_class_of<int>::value);
+    static_assert(is_substitution_failure_class_of<int &>::value);
+    static_assert(is_substitution_failure_class_of<int()>::value);
+    static_assert(is_substitution_failure_class_of<int(*)()>::value);
+    static_assert(is_substitution_failure_class_of<int(**)()>::value);
+    static_assert(is_substitution_failure_class_of<int(&)()>::value);
+    static_assert(is_substitution_failure_class_of<int (foo::** const)()>::value);
 }
 

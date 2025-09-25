@@ -25,8 +25,8 @@ struct is_substitution_failure_apply_member_pointer {
 };
 
 int main() {
-    CT_ASSERT(is_substitution_failure_apply_member_pointer<void, foo>::value);
-    CT_ASSERT(is_substitution_failure_apply_member_pointer<int,  int>::value);
-    CT_ASSERT(is_substitution_failure_apply_member_pointer<void, int>::value);
+    static_assert(is_substitution_failure_apply_member_pointer<void, foo>::value);
+    static_assert(is_substitution_failure_apply_member_pointer<int,  int>::value);
+    static_assert(is_substitution_failure_apply_member_pointer<void, int>::value);
 }
 

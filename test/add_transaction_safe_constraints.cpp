@@ -34,18 +34,18 @@ int main() {
 
     auto lambda = [](){};
 
-    CT_ASSERT(is_substitution_failure_add_tx_safe<decltype(lambda)>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<decltype(lambda)&>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int &>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int (* const &)()>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int (foo::* &)()>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int (foo::* const)()>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int (foo::* const &)()>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<int (foo::* volatile)()>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<void>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<void*>::value);
-    CT_ASSERT(is_substitution_failure_add_tx_safe<void(**)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<decltype(lambda)>::value);
+    static_assert(is_substitution_failure_add_tx_safe<decltype(lambda)&>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int &>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int (* const &)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int (foo::* &)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int (foo::* const)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int (foo::* const &)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<int (foo::* volatile)()>::value);
+    static_assert(is_substitution_failure_add_tx_safe<void>::value);
+    static_assert(is_substitution_failure_add_tx_safe<void*>::value);
+    static_assert(is_substitution_failure_add_tx_safe<void(**)()>::value);
 }
 
 #endif //#ifndef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE

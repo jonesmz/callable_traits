@@ -28,19 +28,19 @@ struct is_substitution_failure_function_type {
 
 int main() {
 
-    CT_ASSERT(is_substitution_failure_function_type<int>::value);
-    CT_ASSERT(is_substitution_failure_function_type<int &>::value);
-    CT_ASSERT(is_substitution_failure_function_type<int (foo::** &)()>::value);
-    CT_ASSERT(is_substitution_failure_function_type<int (foo::** const)()>::value);
-    CT_ASSERT(is_substitution_failure_function_type<int (foo::** const &)()>::value);
-    CT_ASSERT(is_substitution_failure_function_type<int (foo::** volatile)()>::value);
-    CT_ASSERT(!is_substitution_failure_function_type<int (foo::* &)()>::value);
-    CT_ASSERT(!is_substitution_failure_function_type<int (foo::* const)()>::value);
-    CT_ASSERT(!is_substitution_failure_function_type<int (foo::* const &)()>::value);
-    CT_ASSERT(!is_substitution_failure_function_type<int (foo::* volatile)()>::value);
+    static_assert(is_substitution_failure_function_type<int>::value);
+    static_assert(is_substitution_failure_function_type<int &>::value);
+    static_assert(is_substitution_failure_function_type<int (foo::** &)()>::value);
+    static_assert(is_substitution_failure_function_type<int (foo::** const)()>::value);
+    static_assert(is_substitution_failure_function_type<int (foo::** const &)()>::value);
+    static_assert(is_substitution_failure_function_type<int (foo::** volatile)()>::value);
+    static_assert(!is_substitution_failure_function_type<int (foo::* &)()>::value);
+    static_assert(!is_substitution_failure_function_type<int (foo::* const)()>::value);
+    static_assert(!is_substitution_failure_function_type<int (foo::* const &)()>::value);
+    static_assert(!is_substitution_failure_function_type<int (foo::* volatile)()>::value);
 
     auto lambda = [](){};
-    CT_ASSERT(!is_substitution_failure_function_type<decltype(lambda)&>::value);
-    CT_ASSERT(is_substitution_failure_function_type<void>::value);
+    static_assert(!is_substitution_failure_function_type<decltype(lambda)&>::value);
+    static_assert(is_substitution_failure_function_type<void>::value);
 }
 

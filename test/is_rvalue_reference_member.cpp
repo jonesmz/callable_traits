@@ -20,14 +20,14 @@ struct foo {};
 template<typename T>
 void assert_rvalue_qualified() {
     
-    CT_ASSERT( is_rvalue_reference_member<T>());
+    static_assert( is_rvalue_reference_member<T>());
 }
 
 
 template<typename T>
 void assert_not_rvalue_qualified() {
     
-    CT_ASSERT(! is_rvalue_reference_member<T>());
+    static_assert(! is_rvalue_reference_member<T>());
 }
 
 int main() {
@@ -102,18 +102,18 @@ int main() {
         using cvl = void() const volatile &;
         using cvr = void() const volatile &&;
 
-        CT_ASSERT(! is_rvalue_reference_member<f>());
-        CT_ASSERT(! is_rvalue_reference_member<l>());
-        CT_ASSERT( is_rvalue_reference_member<r>());
-        CT_ASSERT(! is_rvalue_reference_member<c>());
-        CT_ASSERT(! is_rvalue_reference_member<cl>());
-        CT_ASSERT( is_rvalue_reference_member<cr>());
-        CT_ASSERT(! is_rvalue_reference_member<v>());
-        CT_ASSERT(! is_rvalue_reference_member<vl>());
-        CT_ASSERT( is_rvalue_reference_member<vr>());
-        CT_ASSERT(! is_rvalue_reference_member<cv>());
-        CT_ASSERT(! is_rvalue_reference_member<cvl>());
-        CT_ASSERT( is_rvalue_reference_member<cvr>());
+        static_assert(! is_rvalue_reference_member<f>());
+        static_assert(! is_rvalue_reference_member<l>());
+        static_assert( is_rvalue_reference_member<r>());
+        static_assert(! is_rvalue_reference_member<c>());
+        static_assert(! is_rvalue_reference_member<cl>());
+        static_assert( is_rvalue_reference_member<cr>());
+        static_assert(! is_rvalue_reference_member<v>());
+        static_assert(! is_rvalue_reference_member<vl>());
+        static_assert( is_rvalue_reference_member<vr>());
+        static_assert(! is_rvalue_reference_member<cv>());
+        static_assert(! is_rvalue_reference_member<cvl>());
+        static_assert( is_rvalue_reference_member<cvr>());
     }
 
     using f_ptr = void(*)();

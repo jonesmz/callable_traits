@@ -20,22 +20,22 @@ int main() {
         using f = void(int, ...);
         using expect = void(int);
         using test = ct::remove_varargs_t<f>;
-        static_assert(std::is_same_v<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         using fp = void(*)(...);
         using expect = void(*)();
         using test = ct::remove_varargs_t<fp>;
-        static_assert(std::is_same_v<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         using fr = void(&)(const char*, ...);
         using expect = void(&)(const char*);
         using test = ct::remove_varargs_t<fr>;
-        static_assert(std::is_same_v<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         using pmf = void(foo::*)(...) const;
         using expect = void(foo::*)() const;
         using test = ct::remove_varargs_t<pmf>;
-        static_assert(std::is_same_v<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>);
     }
 }
 //]

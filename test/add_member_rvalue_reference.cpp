@@ -32,19 +32,19 @@ int main() {
         using cvl = void(foo::*)() const volatile &;
         using cvr = void(foo::*)() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
+        static_assert(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
     }
 
     {
@@ -61,19 +61,19 @@ int main() {
         using cvl = void(foo::*)() const volatile &;
         using cvr = void(foo::*)() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
+        static_assert(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
     }
 
     {
@@ -90,19 +90,19 @@ int main() {
         using cvl = void(foo::*)(...) const volatile &;
         using cvr = void(foo::*)(...) const volatile &&;
 
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
+        static_assert(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
     }
     
     {
@@ -119,19 +119,19 @@ int main() {
         using cvl = void(foo::*)() const volatile &;
         using cvr = void(foo::*)() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
+        static_assert(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
     }
     
     {
@@ -148,19 +148,19 @@ int main() {
         using cvl = void() const volatile &;
         using cvr = void() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
-        CT_ASSERT(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
-        CT_ASSERT(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
-        CT_ASSERT(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, f)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, c)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, v)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,    TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,   TRAIT(add_member_rvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,   TRAIT(add_member_rvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,  TRAIT(add_member_rvalue_reference, cvl)>);
+        static_assert(std::is_same_v<r,    TRAIT(add_member_rvalue_reference, r)>);
+        static_assert(!std::is_same_v<r,   TRAIT(add_member_rvalue_reference, l)>);
+        static_assert(std::is_same_v<cr,   TRAIT(add_member_rvalue_reference, cr)>);
+        static_assert(std::is_same_v<vr,   TRAIT(add_member_rvalue_reference, vr)>);
+        static_assert(std::is_same_v<cvr,  TRAIT(add_member_rvalue_reference, cvr)>);
     }
 }
 

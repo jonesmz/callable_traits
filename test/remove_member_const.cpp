@@ -30,18 +30,18 @@ int main() {
         using cvl = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile LREF;
         using cvr = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
     }
 
     {
@@ -58,18 +58,18 @@ int main() {
         using cvl = foo const & (foo::*)(int, int) const volatile LREF;
         using cvr = foo const & (foo::*)(int, int) const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
     }
 
 #ifndef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS
@@ -88,18 +88,18 @@ int main() {
         using cvl = void() const volatile LREF;
         using cvr = void() const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
-        CT_ASSERT(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
-        CT_ASSERT(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
-        CT_ASSERT(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
-        CT_ASSERT(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
-        CT_ASSERT(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
-        CT_ASSERT(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  f)>);
+        static_assert(std::is_same_v<f,   TRAIT(remove_member_const,  c)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  l)>);
+        static_assert(std::is_same_v<l,   TRAIT(remove_member_const,  cl)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  r)>);
+        static_assert(std::is_same_v<r,   TRAIT(remove_member_const,  cr)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  v)>);
+        static_assert(std::is_same_v<v,   TRAIT(remove_member_const,  cv)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  vl)>);
+        static_assert(std::is_same_v<vl,  TRAIT(remove_member_const,  cvl)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  vr)>);
+        static_assert(std::is_same_v<vr,  TRAIT(remove_member_const,  cvr)>);
     }
 
 #endif

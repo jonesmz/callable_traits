@@ -18,10 +18,10 @@ int main(){}
 template<typename Safe, typename NotSafe>
 void test() {
 
-    CT_ASSERT(std::is_same_v<Safe,  TRAIT(add_transaction_safe, NotSafe)>);
+    static_assert(std::is_same_v<Safe,  TRAIT(add_transaction_safe, NotSafe)>);
 
     //sanity check
-    CT_ASSERT(!std::is_same_v<Safe, NotSafe>);
+    static_assert(!std::is_same_v<Safe, NotSafe>);
 }
 
 #define TEST_TRANSACTION_SAFE(not_safe) test<not_safe transaction_safe, not_safe>()

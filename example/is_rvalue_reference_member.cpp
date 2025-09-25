@@ -17,15 +17,15 @@ int main(){ return 0; }
 
 namespace ct = boost::callable_traits;
 
-static_assert(ct::is_rvalue_reference_member<int()&&>::value, "");
-static_assert(!ct::is_rvalue_reference_member<int()&>::value, "");
-static_assert(!ct::is_rvalue_reference_member<int()>::value, "");
+static_assert(ct::is_rvalue_reference_member<int()&&>::value);
+static_assert(!ct::is_rvalue_reference_member<int()&>::value);
+static_assert(!ct::is_rvalue_reference_member<int()>::value);
 
 struct foo;
 
-static_assert(ct::is_rvalue_reference_member<int(foo::*)()&&>::value, "");
-static_assert(!ct::is_rvalue_reference_member<int(foo::*)()&>::value, "");
-static_assert(!ct::is_rvalue_reference_member<int(foo::*)()>::value, "");
+static_assert(ct::is_rvalue_reference_member<int(foo::*)()&&>::value);
+static_assert(!ct::is_rvalue_reference_member<int(foo::*)()&>::value);
+static_assert(!ct::is_rvalue_reference_member<int(foo::*)()>::value);
 
 int main() {}
 //]

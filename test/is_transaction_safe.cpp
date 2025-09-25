@@ -11,10 +11,10 @@ Distributed under the Boost Software License, Version 1.0.
 template<typename Safe, typename NotSafe>
 void test() {
 
-    CT_ASSERT( is_transaction_safe<Safe>::value
+    static_assert( is_transaction_safe<Safe>::value
         // for when tx safe is disabled
         || std::is_same_v<Safe, NotSafe>);
-    CT_ASSERT(! is_transaction_safe<NotSafe>::value);
+    static_assert(! is_transaction_safe<NotSafe>::value);
 }
 
 #define TEST_TRANSACTION_SAFE(not_safe) \

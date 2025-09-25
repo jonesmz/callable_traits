@@ -12,10 +12,6 @@ Distributed under the Boost Software License, Version 1.0.
 
 using namespace boost::callable_traits;
 
-#ifndef CT_ASSERT
-#define CT_ASSERT(...) static_assert(__VA_ARGS__, #__VA_ARGS__)
-#endif //CT_ASSERT
-
 #ifdef BOOST_CLBL_TRTS_DISABLE_REFERENCE_QUALIFIERS
 #define LREF
 #define RREF
@@ -52,5 +48,5 @@ using namespace boost::callable_traits;
 
 template<typename T1, typename T2>
 void assert_same() {
-    CT_ASSERT(std::is_same_v<T1, T2>);
+    static_assert(std::is_same_v<T1, T2>);
 }

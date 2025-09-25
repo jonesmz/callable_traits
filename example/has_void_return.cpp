@@ -11,8 +11,8 @@ Distributed under the Boost Software License, Version 1.0.
 
 namespace ct = boost::callable_traits;
 
-static_assert(ct::has_void_return<void()>::value, "");
-static_assert(!ct::has_void_return<int()>::value, "");
+static_assert(ct::has_void_return<void()>::value);
+static_assert(!ct::has_void_return<int()>::value);
 
 int main() {}
 //]

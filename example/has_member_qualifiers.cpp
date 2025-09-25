@@ -13,9 +13,9 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(ct::has_member_qualifiers<int(foo::*)() const>::value, "");
-static_assert(ct::has_member_qualifiers<int(foo::*)() volatile>::value, "");
-static_assert(!ct::has_member_qualifiers<int(foo::*)()>::value, "");
+static_assert(ct::has_member_qualifiers<int(foo::*)() const>::value);
+static_assert(ct::has_member_qualifiers<int(foo::*)() volatile>::value);
+static_assert(!ct::has_member_qualifiers<int(foo::*)()>::value);
 
 int main() {}
 //]

@@ -18,15 +18,15 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(ct::is_noexcept<int() noexcept>::value, "");
-static_assert(ct::is_noexcept<int(*)() noexcept>::value, "");
-static_assert(ct::is_noexcept<int(&)() noexcept>::value, "");
-static_assert(ct::is_noexcept<int(foo::*)() const noexcept>::value, "");
+static_assert(ct::is_noexcept<int() noexcept>::value);
+static_assert(ct::is_noexcept<int(*)() noexcept>::value);
+static_assert(ct::is_noexcept<int(&)() noexcept>::value);
+static_assert(ct::is_noexcept<int(foo::*)() const noexcept>::value);
 
-static_assert(!ct::is_noexcept<int()>::value, "");
-static_assert(!ct::is_noexcept<int(*)()>::value, "");
-static_assert(!ct::is_noexcept<int(&)()>::value, "");
-static_assert(!ct::is_noexcept<int(foo::*)() const>::value, "");
+static_assert(!ct::is_noexcept<int()>::value);
+static_assert(!ct::is_noexcept<int(*)()>::value);
+static_assert(!ct::is_noexcept<int(&)()>::value);
+static_assert(!ct::is_noexcept<int(foo::*)() const>::value);
 
 int main() {}
 //]

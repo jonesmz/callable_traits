@@ -32,18 +32,18 @@ int main() {
         using cvl = void(foo::*)() const volatile &;
         using cvr = void(foo::*)() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  f)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  c)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  v)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cv)>);
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  l)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  cl)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  vl)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvl)>);
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  r)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  cr)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  vr)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvr)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  f)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  c)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  v)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cv)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  l)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  cl)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  vl)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvl)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  r)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  cr)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  vr)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvr)>);
     }
 
     {
@@ -60,18 +60,18 @@ int main() {
         using cvl = void() const volatile &;
         using cvr = void() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  f)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  c)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  v)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cv)>);
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  l)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  cl)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  vl)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvl)>);
-        CT_ASSERT(std::is_same_v<f,    TRAIT(remove_member_reference,  r)>);
-        CT_ASSERT(std::is_same_v<c,    TRAIT(remove_member_reference,  cr)>);
-        CT_ASSERT(std::is_same_v<v,    TRAIT(remove_member_reference,  vr)>);
-        CT_ASSERT(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvr)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  f)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  c)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  v)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cv)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  l)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  cl)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  vl)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvl)>);
+        static_assert(std::is_same_v<f,    TRAIT(remove_member_reference,  r)>);
+        static_assert(std::is_same_v<c,    TRAIT(remove_member_reference,  cr)>);
+        static_assert(std::is_same_v<v,    TRAIT(remove_member_reference,  vr)>);
+        static_assert(std::is_same_v<cv,   TRAIT(remove_member_reference,  cvr)>);
     }
 }
 

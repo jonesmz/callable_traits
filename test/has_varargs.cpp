@@ -15,13 +15,13 @@ struct foo {};
 template<typename T>
 void assert_has_varargs() {
 
-    CT_ASSERT( has_varargs<T>::value);
+    static_assert( has_varargs<T>::value);
 }
 
 template<typename T>
 void assert_not_has_varargs() {
 
-    CT_ASSERT(! has_varargs<T>::value);
+    static_assert(! has_varargs<T>::value);
 }
 
 
@@ -163,18 +163,18 @@ int main() {
         using cvl = void() const volatile LREF;
         using cvr = void() const volatile RREF;
 
-        CT_ASSERT(! has_varargs<f>());
-        CT_ASSERT(! has_varargs<l>());
-        CT_ASSERT(! has_varargs<r>());
-        CT_ASSERT(! has_varargs<c>());
-        CT_ASSERT(! has_varargs<cl>());
-        CT_ASSERT(! has_varargs<cr>());
-        CT_ASSERT(! has_varargs<v>());
-        CT_ASSERT(! has_varargs<vl>());
-        CT_ASSERT(! has_varargs<vr>());
-        CT_ASSERT(! has_varargs<cv>());
-        CT_ASSERT(! has_varargs<cvl>());
-        CT_ASSERT(! has_varargs<cvr>());
+        static_assert(! has_varargs<f>());
+        static_assert(! has_varargs<l>());
+        static_assert(! has_varargs<r>());
+        static_assert(! has_varargs<c>());
+        static_assert(! has_varargs<cl>());
+        static_assert(! has_varargs<cr>());
+        static_assert(! has_varargs<v>());
+        static_assert(! has_varargs<vl>());
+        static_assert(! has_varargs<vr>());
+        static_assert(! has_varargs<cv>());
+        static_assert(! has_varargs<cvl>());
+        static_assert(! has_varargs<cvr>());
     }
 
     {
@@ -191,18 +191,18 @@ int main() {
         using cvl = void(...) const volatile LREF;
         using cvr = void(...) const volatile RREF;
 
-        CT_ASSERT( has_varargs<f>());
-        CT_ASSERT( has_varargs<l>());
-        CT_ASSERT( has_varargs<r>());
-        CT_ASSERT( has_varargs<c>());
-        CT_ASSERT( has_varargs<cl>());
-        CT_ASSERT( has_varargs<cr>());
-        CT_ASSERT( has_varargs<v>());
-        CT_ASSERT( has_varargs<vl>());
-        CT_ASSERT( has_varargs<vr>());
-        CT_ASSERT( has_varargs<cv>());
-        CT_ASSERT( has_varargs<cvl>());
-        CT_ASSERT( has_varargs<cvr>());
+        static_assert( has_varargs<f>());
+        static_assert( has_varargs<l>());
+        static_assert( has_varargs<r>());
+        static_assert( has_varargs<c>());
+        static_assert( has_varargs<cl>());
+        static_assert( has_varargs<cr>());
+        static_assert( has_varargs<v>());
+        static_assert( has_varargs<vl>());
+        static_assert( has_varargs<vr>());
+        static_assert( has_varargs<cv>());
+        static_assert( has_varargs<cvl>());
+        static_assert( has_varargs<cvr>());
     }
 
 #endif //#ifndef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS

@@ -17,8 +17,8 @@ struct foo {
     operator()(T){}
 };
 
-static_assert(ct::is_invocable<foo, int>::value, "");
-static_assert(!ct::is_invocable<foo, double>::value, "");
+static_assert(ct::is_invocable<foo, int>::value);
+static_assert(!ct::is_invocable<foo, double>::value);
 
 int main() {}
 //]

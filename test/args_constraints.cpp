@@ -27,20 +27,20 @@ struct is_substitution_failure_args {
 
 int main() {
 
-    CT_ASSERT(is_substitution_failure_args<int>::value);
-    CT_ASSERT(is_substitution_failure_args<int &>::value);
-    CT_ASSERT(is_substitution_failure_args<int (** const &)()>::value);
-    CT_ASSERT(is_substitution_failure_args<int (foo::** &)()>::value);
-    CT_ASSERT(is_substitution_failure_args<int (foo::** const)()>::value);
-    CT_ASSERT(is_substitution_failure_args<int (foo::** const &)()>::value);
-    CT_ASSERT(is_substitution_failure_args<int (foo::** volatile)()>::value);
-    CT_ASSERT(!is_substitution_failure_args<int (* const &)()>::value);
-    CT_ASSERT(!is_substitution_failure_args<int (foo::* &)()>::value);
-    CT_ASSERT(!is_substitution_failure_args<int (foo::* const)()>::value);
-    CT_ASSERT(!is_substitution_failure_args<int (foo::* const &)()>::value);
-    CT_ASSERT(!is_substitution_failure_args<int (foo::* volatile)()>::value);
+    static_assert(is_substitution_failure_args<int>::value);
+    static_assert(is_substitution_failure_args<int &>::value);
+    static_assert(is_substitution_failure_args<int (** const &)()>::value);
+    static_assert(is_substitution_failure_args<int (foo::** &)()>::value);
+    static_assert(is_substitution_failure_args<int (foo::** const)()>::value);
+    static_assert(is_substitution_failure_args<int (foo::** const &)()>::value);
+    static_assert(is_substitution_failure_args<int (foo::** volatile)()>::value);
+    static_assert(!is_substitution_failure_args<int (* const &)()>::value);
+    static_assert(!is_substitution_failure_args<int (foo::* &)()>::value);
+    static_assert(!is_substitution_failure_args<int (foo::* const)()>::value);
+    static_assert(!is_substitution_failure_args<int (foo::* const &)()>::value);
+    static_assert(!is_substitution_failure_args<int (foo::* volatile)()>::value);
     auto lambda = [](){};
-    CT_ASSERT(!is_substitution_failure_args<decltype(lambda)&>::value);
-    CT_ASSERT(is_substitution_failure_args<void>::value);
+    static_assert(!is_substitution_failure_args<decltype(lambda)&>::value);
+    static_assert(is_substitution_failure_args<void>::value);
 }
 

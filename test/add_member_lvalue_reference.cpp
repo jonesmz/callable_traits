@@ -32,19 +32,19 @@ int main() {
         using cvl = void(foo::*)() const volatile &;
         using cvr = void(foo::*)() const volatile &&;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     } 
     
     {
@@ -61,19 +61,19 @@ int main() {
         using cvl = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile &;
         using cvr = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile &&;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
     
     {
@@ -90,19 +90,19 @@ int main() {
         using cvl = void(...) const volatile &;
         using cvr = void(...) const volatile &&;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
 
     #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
@@ -120,19 +120,19 @@ int main() {
         using cvl = void(...) const volatile & transaction_safe;
         using cvr = void(...) const volatile && transaction_safe;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
 
     }
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
@@ -152,19 +152,19 @@ int main() {
         using cvl = void(...) const volatile & noexcept;
         using cvr = void(...) const volatile && noexcept;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
 
@@ -184,19 +184,19 @@ int main() {
         using cvl = void(...) const volatile & transaction_safe noexcept;
         using cvr = void(...) const volatile && transaction_safe noexcept;
 
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
-        CT_ASSERT(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
-        CT_ASSERT(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
-        CT_ASSERT(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
-        CT_ASSERT(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
-        CT_ASSERT(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
-        CT_ASSERT(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
-        CT_ASSERT(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
-        CT_ASSERT(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, f)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, c)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, v)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cv)>);
+        static_assert(std::is_same_v<l,     TRAIT(add_member_lvalue_reference, l)>);
+        static_assert(std::is_same_v<cl,    TRAIT(add_member_lvalue_reference, cl)>);
+        static_assert(std::is_same_v<vl,    TRAIT(add_member_lvalue_reference, vl)>);
+        static_assert(std::is_same_v<cvl,   TRAIT(add_member_lvalue_reference, cvl)>);
+        static_assert(!std::is_same_v<r,    TRAIT(add_member_lvalue_reference, r)>);
+        static_assert(!std::is_same_v<cr,   TRAIT(add_member_lvalue_reference, cr)>);
+        static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
+        static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES

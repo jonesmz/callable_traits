@@ -11,11 +11,11 @@ Distributed under the Boost Software License, Version 1.0.
 template<typename Safe, typename NotSafe>
 void test() {
 
-    CT_ASSERT(std::is_same_v<NotSafe, TRAIT(remove_transaction_safe, Safe)>);
+    static_assert(std::is_same_v<NotSafe, TRAIT(remove_transaction_safe, Safe)>);
 
     //sanity check
     #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
-    CT_ASSERT(!std::is_same_v<Safe, NotSafe>);
+    static_assert(!std::is_same_v<Safe, NotSafe>);
     #endif
 }
 

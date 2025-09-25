@@ -41,31 +41,31 @@ int main() {
         using va_cvl = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile LREF;
         using va_cvr = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(...) const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
     }
 
     {
@@ -95,31 +95,31 @@ int main() {
         using va_cvl = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(int&, int&&, ...) const volatile LREF;
         using va_cvr = void(BOOST_CLBL_TRTS_DEFAULT_VARARGS_CC foo::*)(int&, int&&, ...) const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
     }
 
 #ifndef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS
@@ -151,31 +151,31 @@ int main() {
         using va_cvl = void(...) const volatile LREF;
         using va_cvr = void(...) const volatile RREF;
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, cvr)>);
 
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
-        CT_ASSERT(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
-        CT_ASSERT(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
-        CT_ASSERT(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
-        CT_ASSERT(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
-        CT_ASSERT(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
-        CT_ASSERT(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
-        CT_ASSERT(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
-        CT_ASSERT(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
-        CT_ASSERT(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
-        CT_ASSERT(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
-        CT_ASSERT(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, va_f)>);
+        static_assert(std::is_same_v<va_l,    TRAIT(add_varargs, va_l)>);
+        static_assert(std::is_same_v<va_r,    TRAIT(add_varargs, va_r)>);
+        static_assert(std::is_same_v<va_c,    TRAIT(add_varargs, va_c)>);
+        static_assert(std::is_same_v<va_cl,   TRAIT(add_varargs, va_cl)>);
+        static_assert(std::is_same_v<va_cr,   TRAIT(add_varargs, va_cr)>);
+        static_assert(std::is_same_v<va_v,    TRAIT(add_varargs, va_v)>);
+        static_assert(std::is_same_v<va_vl,   TRAIT(add_varargs, va_vl)>);
+        static_assert(std::is_same_v<va_vr,   TRAIT(add_varargs, va_vr)>);
+        static_assert(std::is_same_v<va_cv,   TRAIT(add_varargs, va_cv)>);
+        static_assert(std::is_same_v<va_cvl,  TRAIT(add_varargs, va_cvl)>);
+        static_assert(std::is_same_v<va_cvr,  TRAIT(add_varargs, va_cvr)>);
     }
 
 #endif //#ifndef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS
@@ -183,6 +183,6 @@ int main() {
     {
         using f = void(&)();
         using va_f = void(&)(...);
-        CT_ASSERT(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
+        static_assert(std::is_same_v<va_f,    TRAIT(add_varargs, f)>);
     }
 }

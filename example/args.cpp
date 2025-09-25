@@ -20,7 +20,7 @@ namespace ct = boost::callable_traits;
 template<typename T, typename Expect>
 void test(){
     using args_t = ct::args_t<T>;
-    static_assert(std::is_same_v<args_t, Expect>, "");
+    static_assert(std::is_same_v<args_t, Expect>);
 }
 
 int main() {

@@ -19,20 +19,20 @@ int main() {
     // reference collapsing rules. Here, we test that behavior.
 
     using rref_plus_lref = collapse_flags<rref_, lref_>;
-    CT_ASSERT(rref_plus_lref::value == lref_);
+    static_assert(rref_plus_lref::value == lref_);
 
     using lref_plus_rref = collapse_flags<lref_, rref_>;
-    CT_ASSERT(lref_plus_rref::value == lref_);
+    static_assert(lref_plus_rref::value == lref_);
 
     using lref_plus_lref = collapse_flags<lref_, lref_>;
-    CT_ASSERT(lref_plus_lref::value == lref_);
+    static_assert(lref_plus_lref::value == lref_);
 
     using rref_plus_rref = collapse_flags<rref_, rref_>;
-    CT_ASSERT(rref_plus_rref::value == rref_);
+    static_assert(rref_plus_rref::value == rref_);
 
     using const_plus_rref = collapse_flags<const_, rref_>;
-    CT_ASSERT(const_plus_rref::value == (const_ | rref_));
+    static_assert(const_plus_rref::value == (const_ | rref_));
 
     using const_plus_lref = collapse_flags<const_, lref_>;
-    CT_ASSERT(const_plus_lref::value == (const_ | lref_));
+    static_assert(const_plus_lref::value == (const_ | lref_));
 }

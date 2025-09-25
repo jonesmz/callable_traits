@@ -15,7 +15,7 @@ namespace ct = boost::callable_traits;
 
 // This function template helps keep our example code neat
 template<typename A, typename B>
-void assert_same(){ static_assert(std::is_same_v<A, B>, ""); }
+void assert_same(){ static_assert(std::is_same_v<A, B>); }
 
 // foo is a function object
 struct foo {
@@ -31,10 +31,10 @@ int main() {
     >();
 
     // has_void_return lets us perform a quick check for a void return type
-    static_assert(ct::has_void_return<foo>::value, "");
+    static_assert(ct::has_void_return<foo>::value);
 
     // Detect C-style variadics (ellipses) in a signature (e.g. printf)
-    static_assert(!ct::has_varargs<foo>::value, "");
+    static_assert(!ct::has_varargs<foo>::value);
 
     // pmf is a pointer-to-member function: void (foo::*)(int, char, float) const
     using pmf = decltype(&foo::operator());
@@ -52,7 +52,7 @@ int main() {
     >();
 
     // is_const_member_v checks for the presence of member const
-    static_assert(ct::is_const_member<pmf>::value, "");
+    static_assert(ct::is_const_member<pmf>::value);
 }
 
 //]

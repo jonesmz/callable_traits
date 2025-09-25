@@ -23,26 +23,26 @@ int main() {
         using pmf = void(foo::*)();
         using expect = void(foo::*)() const volatile;
         using test = ct::add_member_cv_t<pmf>;
-        static_assert(std::is_same_v<test, expect>, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         // add_member_cv_t doesn't change anything when
         // the function type is already cv-qualified.
         using pmf = void(foo::*)() const volatile &&;
         using expect = void(foo::*)() const volatile &&;
         using test = ct::add_member_cv_t<pmf>;
-        static_assert(std::is_same_v<test, expect>, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         using pmf = void(foo::*)() volatile &;
         using expect = void(foo::*)() const volatile &;
         using test = ct::add_member_cv_t<pmf>;
-        static_assert(std::is_same_v<test, expect>, "");
+        static_assert(std::is_same_v<test, expect>);
     } {
         // add_member_cv_t can also be used with "abominable"
         // function types.
         using f = void();
         using expect = void() const volatile;
         using test = ct::add_member_cv_t<f>;
-        static_assert(std::is_same_v<test, expect>, "");
+        static_assert(std::is_same_v<test, expect>);
     }
 }
 //]

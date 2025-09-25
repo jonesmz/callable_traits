@@ -23,7 +23,7 @@ void test(){
     // bevaves consistently for many different types
     using type = ct::function_type_t<T>;
     using expect = void(int, float&, const char*);
-    static_assert(std::is_same_v<expect, type>, "");
+    static_assert(std::is_same_v<expect, type>);
 }
 
 int main() {

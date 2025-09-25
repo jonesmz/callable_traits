@@ -19,13 +19,13 @@ struct foo {};
 
 template<typename T>
 void assert_qualified() {
-    CT_ASSERT( has_member_qualifiers<T>::value);
+    static_assert( has_member_qualifiers<T>::value);
 }
 
 
 template<typename T>
 void assert_unqualified() {
-    CT_ASSERT(! has_member_qualifiers<T>::value);
+    static_assert(! has_member_qualifiers<T>::value);
 }
 
 int main() {
@@ -102,18 +102,18 @@ int main() {
         using cvl = void() const volatile &;
         using cvr = void() const volatile &&;
 
-        CT_ASSERT(! has_member_qualifiers<f>());
-        CT_ASSERT( has_member_qualifiers<l>());
-        CT_ASSERT( has_member_qualifiers<r>());
-        CT_ASSERT( has_member_qualifiers<c>());
-        CT_ASSERT( has_member_qualifiers<cl>());
-        CT_ASSERT( has_member_qualifiers<cr>());
-        CT_ASSERT( has_member_qualifiers<v>());
-        CT_ASSERT( has_member_qualifiers<vl>());
-        CT_ASSERT( has_member_qualifiers<vr>());
-        CT_ASSERT( has_member_qualifiers<cv>());
-        CT_ASSERT( has_member_qualifiers<cvl>());
-        CT_ASSERT( has_member_qualifiers<cvr>());
+        static_assert(! has_member_qualifiers<f>());
+        static_assert( has_member_qualifiers<l>());
+        static_assert( has_member_qualifiers<r>());
+        static_assert( has_member_qualifiers<c>());
+        static_assert( has_member_qualifiers<cl>());
+        static_assert( has_member_qualifiers<cr>());
+        static_assert( has_member_qualifiers<v>());
+        static_assert( has_member_qualifiers<vl>());
+        static_assert( has_member_qualifiers<vr>());
+        static_assert( has_member_qualifiers<cv>());
+        static_assert( has_member_qualifiers<cvl>());
+        static_assert( has_member_qualifiers<cvr>());
     }
 
 #endif //#ifndef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS

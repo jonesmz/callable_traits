@@ -25,13 +25,13 @@ struct invoke_case {
    template<typename Callable>
    void operator()(tag<Callable>) const {
 
-        CT_ASSERT((Expect == boost::callable_traits::is_invocable_r<Ret, Callable, Args...>()));
-        CT_ASSERT((Expect == boost::callable_traits::is_invocable_r_v<Ret, Callable, Args...>));
+        static_assert((Expect == boost::callable_traits::is_invocable_r<Ret, Callable, Args...>()));
+        static_assert((Expect == boost::callable_traits::is_invocable_r_v<Ret, Callable, Args...>));
 
 // when available, test parity with std implementation
 #if defined(__cpp_lib_is_invocable)
-        CT_ASSERT((std::is_invocable_r<Ret, Callable, Args...>() == boost::callable_traits::is_invocable_r<Ret, Callable, Args...>()));
-        CT_ASSERT((std::is_invocable_r_v<Ret, Callable, Args...> == boost::callable_traits::is_invocable_r_v<Ret, Callable, Args...>));
+        static_assert((std::is_invocable_r<Ret, Callable, Args...>() == boost::callable_traits::is_invocable_r<Ret, Callable, Args...>()));
+        static_assert((std::is_invocable_r_v<Ret, Callable, Args...> == boost::callable_traits::is_invocable_r_v<Ret, Callable, Args...>));
 #endif
 
    }
