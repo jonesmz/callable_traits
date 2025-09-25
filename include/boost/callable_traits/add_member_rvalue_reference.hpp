@@ -25,7 +25,7 @@ namespace boost { namespace callable_traits {
 
 template<typename T>
 struct add_member_rvalue_reference_t {
-    static_assert(std::is_same_v<T, detail::dummy>::value,
+    static_assert(std::is_same_v<T, detail::dummy>,
         "Reference member qualifiers are not supported by this configuration.");
 };
 

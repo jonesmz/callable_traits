@@ -83,13 +83,13 @@ using remove_volatile_flag = std::integral_constant<
 
 template<typename U, typename T = std::remove_reference_t<U>>
 using cv_of = std::integral_constant<qualifier_flags,
-    (std::is_const<T>::value ? const_ : default_)
-    | (std::is_volatile<T>::value ? volatile_ : default_)>;
+    (std::is_const_v<T> ? const_ : default_)
+    | (std::is_volatile_v<T> ? volatile_ : default_)>;
 
 template<typename T>
 using ref_of = std::integral_constant<qualifier_flags,
-    std::is_rvalue_reference<T>::value ? rref_
-    : (std::is_lvalue_reference<T>::value ? lref_
+    std::is_rvalue_reference_v<T> ? rref_
+    : (std::is_lvalue_reference_v<T> ? lref_
         : default_)>;
 
 //bit-flag implementation of C++11 reference collapsing rules

@@ -25,7 +25,7 @@ struct reference_error { reference_error() = delete; };
 
 template<typename T>
 using error_type = std::conditional_t<
-    std::is_reference<T>::value, reference_error, invalid_type>;
+    std::is_reference_v<T>, reference_error, invalid_type>;
 
 #ifdef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS
 struct abominable_functions_not_supported_on_this_compiler{};

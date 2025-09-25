@@ -19,7 +19,7 @@ BOOST_CLBL_TRTS_SFINAE_MSG(apply_member_pointer, second_template_argument_must_b
 
 namespace detail {
 
-    template<typename T, typename C, bool = std::is_class<C>::value>
+    template<typename T, typename C, bool = std::is_class_v<C>>
     struct make_member_pointer;
 
     template<typename T, typename C>
@@ -59,7 +59,7 @@ using apply_member_pointer_t = //see below
 
         detail::fail_when_same<void, T, members_cannot_have_a_type_of_void>,
 
-        detail::fail_if<!std::is_class<C>::value,
+        detail::fail_if<!std::is_class_v<C>,
             second_template_argument_must_be_a_class_or_struct> >;
 
 namespace detail {

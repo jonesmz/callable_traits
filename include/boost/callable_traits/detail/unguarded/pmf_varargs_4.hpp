@@ -47,7 +47,7 @@ struct pmf<Return(BOOST_CLBL_TRTS_VARARGS_CC T::*)(Args..., ...)
         BOOST_CLBL_TRTS_NOEXCEPT_SPEC;
 
     using invoke_type = std::conditional_t<
-        std::is_rvalue_reference<T BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS>::value,
+        std::is_rvalue_reference_v<T BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS>,
         T BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS,
         std::add_lvalue_reference_t<T BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS>
     >;

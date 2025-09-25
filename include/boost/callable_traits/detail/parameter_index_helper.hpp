@@ -23,7 +23,7 @@ struct parameter_index_helper {
         args_tuple, std::tuple<error_t>>;
 
     static constexpr std::size_t parameter_list_size =
-        std::tuple_size<temp_tuple>::value;
+        std::tuple_size_v<temp_tuple>;
 
     static constexpr bool is_out_of_range = has_parameter_list &&
         I >= parameter_list_size + static_cast<std::size_t>(AllowPlus1);

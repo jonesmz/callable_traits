@@ -25,7 +25,7 @@ namespace boost { namespace callable_traits { namespace detail {
     
         template<bool B, typename T>
         struct fail_if : T {
-            static_assert(std::is_base_of<sfinae_error, T>::value,
+            static_assert(std::is_base_of_v<sfinae_error, T>,
                 "incorrect usage of fail_if");
 
             static constexpr bool value = B;
