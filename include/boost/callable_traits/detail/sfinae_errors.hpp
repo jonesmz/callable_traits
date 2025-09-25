@@ -37,7 +37,7 @@ namespace boost { namespace callable_traits { namespace detail {
 
         template<typename FailMsg, typename ForceTwoPhaseLookup>
         struct fail {
-            using type = std::conditional_t<std::is_same<ForceTwoPhaseLookup, std::false_type>::value,
+            using type = std::conditional_t<std::is_same_v<ForceTwoPhaseLookup, std::false_type>,
             FailMsg, FailMsg>::_::type;
         };
 

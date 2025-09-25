@@ -39,8 +39,8 @@ BOOST_CLBL_TRAITS_INLINE_VAR
 //->
 constexpr bool has_void_return_v = //see below
 //<-
-    std::is_same<typename detail::traits<
-        detail::shallow_decay<T>>::return_type, void>::value;
+    std::is_same_v<typename detail::traits<
+        detail::shallow_decay<T>>::return_type, void>;
 
 }} // namespace boost::callable_traits
 //->

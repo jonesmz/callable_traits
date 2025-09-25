@@ -16,8 +16,8 @@ struct parameter_index_helper {
         typename detail::traits<T>::arg_types>;
 
     static constexpr bool has_parameter_list =
-        !std::is_same<args_tuple, invalid_type>::value
-        && !std::is_same<args_tuple, reference_error>::value;
+        !std::is_same_v<args_tuple, invalid_type>
+        && !std::is_same_v<args_tuple, reference_error>;
 
     using temp_tuple = std::conditional_t<has_parameter_list,
         args_tuple, std::tuple<error_t>>;

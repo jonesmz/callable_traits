@@ -38,18 +38,18 @@ int main() {
 
     {
         using pmf = decltype(&foo1::bar);
-        CT_ASSERT(std::is_same< return_type_t<pmf>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<pmf>, int>);
     } {
         using pmf = decltype(&foo2::bar);
-        CT_ASSERT(std::is_same< return_type_t<pmf>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<pmf>, int>);
     } {
-        CT_ASSERT(std::is_same< return_type_t<foo3>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<foo3>, int>);
     } {
-        CT_ASSERT(std::is_same< return_type_t<foo4>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<foo4>, int>);
     } {
-        CT_ASSERT(std::is_same< return_type_t<decltype(foo5)>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<decltype(foo5)>, int>);
     } {
-        CT_ASSERT(std::is_same< return_type_t<decltype(foo6)>, int>{});
+        CT_ASSERT(std::is_same_v< return_type_t<decltype(foo6)>, int>);
     }
 
     return 0;

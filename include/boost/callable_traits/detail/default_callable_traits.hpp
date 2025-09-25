@@ -134,11 +134,11 @@ struct default_callable_traits {
         typename U = T,
         typename K = std::remove_reference_t<U>,
         typename L = std::conditional_t<
-            std::is_same<void, K>::value, error_t, K>,
+            std::is_same_v<void, K>, error_t, K>,
         typename Class = std::conditional_t<
             std::is_class_v<C>, C, error_t>>
     using apply_member_pointer = std::conditional_t<
-        std::is_same<L, error_t>::value || std::is_same<Class, error_t>::value,
+        std::is_same_v<L, error_t> || std::is_same_v<Class, error_t>,
         error_t, L Class::*>;
     
     // Changes the return type of PMFs, function pointers, function

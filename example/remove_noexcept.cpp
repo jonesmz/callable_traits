@@ -17,10 +17,10 @@ int main(){}
 
 using boost::callable_traits::remove_noexcept_t;
 
-static_assert(std::is_same<
+static_assert(std::is_same_v<
     remove_noexcept_t<int() noexcept>,
     int()
->{}, "");
+>, "");
 
 int main() {}
 

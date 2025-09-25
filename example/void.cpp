@@ -21,11 +21,11 @@ int main() {
 
     using args = ct::args_t<foo>;
     using expected_args = std::tuple<>;
-    static_assert(std::is_same<args, expected_args>{}, "");
+    static_assert(std::is_same_v<args, expected_args>{}, "");
 
     using signature = ct::function_type_t<foo>;
     using expected_signature = void();
-    static_assert(std::is_same<signature, expected_signature>{}, "");
+    static_assert(std::is_same_v<signature, expected_signature>{}, "");
 
     return 0;
 }

@@ -20,13 +20,13 @@ BOOST_CLBL_TRTS_SFINAE_MSG(add_transaction_safe, cannot_add_transaction_safe_to_
 #ifndef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
 template<typename T>
 struct add_transaction_safe_t {
-    static_assert(std::is_same<T, detail::dummy>::value,
+    static_assert(std::is_same_v<T, detail::dummy>,
         "transaction_safe not supported by this configuration.");
 };
 
 template<typename T>
 struct add_transaction_safe {
-    static_assert(std::is_same<T, detail::dummy>::value,
+    static_assert(std::is_same_v<T, detail::dummy>,
         "transaction_safe not supported by this configuration.");
 };
 

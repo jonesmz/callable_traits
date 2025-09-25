@@ -13,7 +13,7 @@ void test() {
 
     CT_ASSERT( is_transaction_safe<Safe>::value
         // for when tx safe is disabled
-        || std::is_same<Safe, NotSafe>::value);
+        || std::is_same_v<Safe, NotSafe>);
     CT_ASSERT(! is_transaction_safe<NotSafe>::value);
 }
 

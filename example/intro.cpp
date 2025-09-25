@@ -15,7 +15,7 @@ namespace ct = boost::callable_traits;
 
 // This function template helps keep our example code neat
 template<typename A, typename B>
-void assert_same(){ static_assert(std::is_same<A, B>::value, ""); }
+void assert_same(){ static_assert(std::is_same_v<A, B>, ""); }
 
 // foo is a function object
 struct foo {

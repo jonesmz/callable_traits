@@ -13,7 +13,7 @@ Distributed under the Boost Software License, Version 1.0.
 template<typename Noexcept, typename NotNoexcept>
 void test() {
 
-    CT_ASSERT(std::is_same<NotNoexcept,  TRAIT(remove_noexcept, Noexcept)>::value);
+    CT_ASSERT(std::is_same_v<NotNoexcept,  TRAIT(remove_noexcept, Noexcept)>);
 }
 
 #define TEST_NOEXCEPT(not_noexcept) \

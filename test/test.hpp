@@ -52,5 +52,5 @@ using namespace boost::callable_traits;
 
 template<typename T1, typename T2>
 void assert_same() {
-    CT_ASSERT(std::is_same<T1, T2>::value);
+    CT_ASSERT(std::is_same_v<T1, T2>);
 }

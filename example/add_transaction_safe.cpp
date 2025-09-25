@@ -21,7 +21,7 @@ using not_safe = int();
 using safe = int() transaction_safe;
 using safe_added = add_transaction_safe_t<not_safe>;
 
-static_assert(std::is_same<safe, safe_added>{}, "");
+static_assert(std::is_same_v<safe, safe_added>, "");
     
 int main() {}
 

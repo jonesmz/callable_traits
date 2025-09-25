@@ -20,13 +20,13 @@ BOOST_CLBL_TRTS_SFINAE_MSG(add_noexcept, cannot_add_noexcept_to_this_type)
 #ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
 template<typename T>
 struct add_noexcept_t {
-    static_assert(std::is_same<T, detail::dummy>::value,
+    static_assert(std::is_same_v<T, detail::dummy>::value,
         "noexcept types not supported by this configuration.");
 };
 
 template<typename T>
 struct add_noexcept {
-    static_assert(std::is_same<T, detail::dummy>::value,
+    static_assert(std::is_same_v<T, detail::dummy>::value,
         "noexcept types not supported by this configuration.");
 };
 

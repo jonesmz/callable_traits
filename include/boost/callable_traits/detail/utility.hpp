@@ -48,7 +48,7 @@ template<typename T, typename Class>
 using add_member_pointer = T Class::*;
 
 template<typename L, typename R, typename ErrorType>
- using fail_when_same = fail_if<std::is_same<L, R>::value, ErrorType>;
+ using fail_when_same = fail_if<std::is_same_v<L, R>, ErrorType>;
 
 template<typename T, typename ErrorType,
     typename U = std::remove_reference_t<T>>
@@ -59,15 +59,15 @@ using try_but_fail_if_invalid = sfinae_try<T,
 
 template<typename T, typename ErrorType,
     typename U = std::remove_reference_t<T>,
-    bool is_reference_error = std::is_same<reference_error, U>::value>
+    bool is_reference_error = std::is_same_v<reference_error, U>>
 using fail_if_invalid = fail_if<
-    std::is_same<U, invalid_type>::value || is_reference_error,
+    std::is_same_v<U, invalid_type> || is_reference_error,
     std::conditional_t<is_reference_error,
         reference_type_not_supported_by_this_metafunction, ErrorType>>;
 
 template<typename T, typename Fallback>
 using fallback_if_invalid = std::conditional_t<
-    std::is_same<T, invalid_type>::value, Fallback, T>;
+    std::is_same_v<T, invalid_type>, Fallback, T>;
 
 template<typename T, template<class> class Alias, typename U = Alias<T>>
 struct force_sfinae {

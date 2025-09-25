@@ -15,8 +15,8 @@ namespace ct = boost::callable_traits;
 
 struct foo;
 
-static_assert(std::is_same<foo, ct::class_of_t<int(foo::*)()>>::value, "");
-static_assert(std::is_same<foo, ct::class_of_t<int foo::*>>::value, "");
+static_assert(std::is_same_v<foo, ct::class_of_t<int(foo::*)()>>, "");
+static_assert(std::is_same_v<foo, ct::class_of_t<int foo::*>>, "");
 
 int main() {}
 //]

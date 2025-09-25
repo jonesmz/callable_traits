@@ -15,7 +15,7 @@ void test() {
 
     CT_ASSERT( is_noexcept<Noexcept>::value
         // for old compilers, TEST_NOEXCEPT_QUAL is empty so types are same
-        || std::is_same<Noexcept, NotNoexcept>::value);
+        || std::is_same_v<Noexcept, NotNoexcept>);
 
     CT_ASSERT(! is_noexcept<NotNoexcept>::value);
 }

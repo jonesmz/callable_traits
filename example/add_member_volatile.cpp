@@ -23,26 +23,26 @@ int main() {
         using pmf = void(foo::*)();
         using expect = void(foo::*)() volatile;
         using test = ct::add_member_volatile_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         // add_member_volatile_t doesn't change anything when
         // the function type is already volatile.
         using pmf = void(foo::*)() volatile &&;
         using expect = void(foo::*)() volatile &&;
         using test = ct::add_member_volatile_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         using pmf = void(foo::*)() const &;
         using expect = void(foo::*)() const volatile &;
         using test = ct::add_member_volatile_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         // add_member_volatile_t can also be used with "abominable"
         // function types.
         using f = void();
         using expect = void() volatile;
         using test = ct::add_member_volatile_t<f>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     }
 }
 

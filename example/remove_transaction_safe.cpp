@@ -21,7 +21,7 @@ using ts = int() transaction_safe;
 using not_ts = int();
 using ts_removed = ct::remove_transaction_safe_t<ts>;
 
-static_assert(std::is_same<not_ts, ts_removed>{}, "");
+static_assert(std::is_same_v<not_ts, ts_removed>{}, "");
     
 int main() {}
 //]

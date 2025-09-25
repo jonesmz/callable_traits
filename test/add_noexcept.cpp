@@ -18,10 +18,10 @@ int main(){}
 template<typename Noexcept, typename NotNoexcept>
 void test() {
 
-    CT_ASSERT(std::is_same<Noexcept,  TRAIT(add_noexcept, NotNoexcept)>::value);
+    CT_ASSERT(std::is_same_v<Noexcept,  TRAIT(add_noexcept, NotNoexcept)>);
 
     //sanity check
-    CT_ASSERT(!std::is_same<Noexcept, NotNoexcept>::value);
+    CT_ASSERT(!std::is_same_v<Noexcept, NotNoexcept>);
 }
 
 #define TEST_NOEXCEPT(not_noexcept) test<not_noexcept noexcept, not_noexcept>()

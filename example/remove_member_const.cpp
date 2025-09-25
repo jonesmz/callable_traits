@@ -23,22 +23,22 @@ int main() {
         using pmf = int(foo::*)() const;
         using expect = int(foo::*)();
         using test = ct::remove_member_const_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         using pmf = int(foo::*)() const &&;
         using expect = int(foo::*)() &&;
         using test = ct::remove_member_const_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         using pmf = int(foo::*)() const volatile &;
         using expect = int(foo::*)() volatile &;
         using test = ct::remove_member_const_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         using f = int() const;
         using expect = int();
         using test = ct::remove_member_const_t<f>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     }
 }
 //]

@@ -23,14 +23,14 @@ int main() {
         using pmf = void(foo::*)();
         using expect = void(foo::*)() &&;
         using test = ct::add_member_rvalue_reference_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         // add_member_rvalue_reference_t doesn't change anything when
         // the function type already has an rvalue qualifier.
         using pmf = void(foo::*)() &&;
         using expect = void(foo::*)() &&;
         using test = ct::add_member_rvalue_reference_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         // add_member_rvalue_reference_t models C++11 reference collapsing
         // rules, so that adding an rvalue qualifier to an
@@ -38,14 +38,14 @@ int main() {
         using pmf = void(foo::*)() const &;
         using expect = void(foo::*)() const &;
         using test = ct::add_member_rvalue_reference_t<pmf>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     } {
         // add_member_rvalue_reference_t can also be used with "abominable"
         // function types.
         using f = void() const;
         using expect = void() const &&;
         using test = ct::add_member_rvalue_reference_t<f>;
-        static_assert(std::is_same<test, expect>::value, "");
+        static_assert(std::is_same_v<test, expect>, "");
     }
 }
 
