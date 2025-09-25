@@ -12,17 +12,19 @@ Distributed under the Boost Software License, Version 1.0.
 #include <boost/callable_traits/detail/forward_declarations.hpp>
 #include <boost/callable_traits/detail/utility.hpp>
 
+#include <type_traits>
+
 namespace boost { namespace callable_traits { namespace detail {
 
     // Here is where the magic happens
     template<typename T>
-    using traits = typename BOOST_CLBL_TRTS_DISJUNCTION(
+    using traits = typename std::disjunction<
         function_object<unwrap_reference<T>>,
         function<T>,
         pmf<T>,
         pmd<T>,
         default_callable_traits<T>
-    )::traits;
+    >::traits;
 
 }}} // namespace boost::callable_traits::detail
 

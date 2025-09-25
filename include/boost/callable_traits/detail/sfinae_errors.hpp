@@ -11,6 +11,8 @@ Distributed under the Boost Software License, Version 1.0.
 
 #include <boost/callable_traits/detail/config.hpp>
 
+#include <type_traits>
+
 namespace boost { namespace callable_traits { namespace detail {
 
         struct sfinae_error{};
@@ -30,8 +32,8 @@ namespace boost { namespace callable_traits { namespace detail {
         };
 
         template<typename T, typename... FailIfs>
-        using sfinae_try = typename BOOST_CLBL_TRTS_DISJUNCTION(
-                FailIfs..., success<T>)::_::type;
+        using sfinae_try = typename ::std::disjunction<
+                FailIfs..., success<T>>::_::type;
 
         template<typename FailMsg, typename ForceTwoPhaseLookup>
         struct fail {
