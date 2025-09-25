@@ -67,10 +67,6 @@ Distributed under the Boost Software License, Version 1.0.
 
 #define BOOST_CLBL_TRTS_DISJUNCTION(...) ::std::disjunction< __VA_ARGS__ >
 
-#ifndef __cpp_variable_templates
-#  define BOOST_CLBL_TRTS_DISABLE_VARIABLE_TEMPLATES
-#endif
-
 #ifndef __cpp_lib_logical_traits
 #  include <boost/callable_traits/detail/polyfills/disjunction.hpp>
 #endif //__cpp_lib_logical_traits
