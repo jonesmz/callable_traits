@@ -47,20 +47,14 @@ struct is_invocable_r
 //->
 // only available when variable templates are supported
 template<typename T, typename... Args>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool is_invocable_v = //see below
+inline constexpr bool is_invocable_v = //see below
 //<-
     detail::is_invocable_impl<T, Args...>::type::value;
 //->
 
 // only available when variable templates are supported
 template<typename Ret, typename T, typename... Args>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool is_invocable_r_v = //see below
+inline constexpr bool is_invocable_r_v = //see below
 //<-
     detail::is_invocable_r_impl<
         typename detail::is_invocable_impl<T, Args...>::type,

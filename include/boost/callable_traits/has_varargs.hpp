@@ -37,10 +37,7 @@ struct has_varargs : detail::traits<
 //->
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool has_varargs_v = //see below
+inline constexpr bool has_varargs_v = //see below
 //<-
     detail::traits<detail::shallow_decay<T>>::has_varargs::value;
 

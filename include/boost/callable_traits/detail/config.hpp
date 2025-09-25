@@ -21,16 +21,6 @@ Distributed under the Boost Software License, Version 1.0.
 # define BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
 #endif
 
-#ifdef __cpp_inline_variables
-# define BOOST_CLBL_TRAITS_INLINE_VAR inline
-#else
-# define BOOST_CLBL_TRAITS_INLINE_VAR
-#endif
-
-#ifdef __cpp_noexcept_function_type
-# define BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-#endif
-
 #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
 #  define BOOST_CLBL_TRTS_TRANSACTION_SAFE_SPECIFIER transaction_safe
 #else

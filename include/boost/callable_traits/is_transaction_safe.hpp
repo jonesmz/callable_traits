@@ -38,10 +38,7 @@ struct is_transaction_safe : detail::traits<
 //->
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool is_transaction_safe_v = //see below
+inline constexpr bool is_transaction_safe_v = //see below
 //<-
     detail::traits<detail::shallow_decay<T>>::is_transaction_safe::value;
 

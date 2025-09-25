@@ -36,10 +36,7 @@ struct has_member_qualifiers : detail::traits<
 //->
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool has_member_qualifiers_v = //see below
+inline constexpr bool has_member_qualifiers_v = //see below
 //<-
     detail::traits<detail::shallow_decay<T>>::has_member_qualifiers::value;
 

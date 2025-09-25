@@ -38,10 +38,7 @@ struct is_volatile_member : detail::traits<
 //->
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool is_volatile_member_v = //see below
+inline constexpr bool is_volatile_member_v = //see below
 //<-
     detail::traits<detail::shallow_decay<T>>::is_volatile_member::value;
 

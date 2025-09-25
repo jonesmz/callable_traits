@@ -34,10 +34,7 @@ struct has_void_return
 
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool has_void_return_v = //see below
+inline constexpr bool has_void_return_v = //see below
 //<-
     std::is_same_v<typename detail::traits<
         detail::shallow_decay<T>>::return_type, void>;

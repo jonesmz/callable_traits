@@ -36,10 +36,7 @@ struct is_lvalue_reference_member
 //->
 // only available when variable templates are supported
 template<typename T>
-//<-
-BOOST_CLBL_TRAITS_INLINE_VAR
-//->
-constexpr bool is_lvalue_reference_member_v = //see below
+inline constexpr bool is_lvalue_reference_member_v = //see below
 //<-
     detail::traits<detail::shallow_decay<T>>::is_lvalue_reference_member::value;
 
