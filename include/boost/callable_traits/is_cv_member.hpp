@@ -27,9 +27,9 @@ struct is_cv_member;
 //<-
 template<typename T>
 struct is_cv_member
-    : detail::traits<detail::shallow_decay<T>>::is_cv_member {
+    : detail::traits<std::remove_cvref_t<T>>::is_cv_member {
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::is_cv_member;
+        std::remove_cvref_t<T>>::is_cv_member;
 };
 
 //->
@@ -37,7 +37,7 @@ struct is_cv_member
 template<typename T>
 inline constexpr bool is_cv_member_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::is_cv_member::value;
+    detail::traits<std::remove_cvref_t<T>>::is_cv_member::value;
 
 }} // namespace boost::callable_traits
 //->

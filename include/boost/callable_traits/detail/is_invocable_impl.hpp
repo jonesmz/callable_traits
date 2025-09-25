@@ -67,8 +67,8 @@ namespace boost { namespace callable_traits { namespace detail {
 
     // handles the member pointer rules of INVOKE
     template<typename Base, typename T,
-             typename IsBaseOf = std::is_base_of<Base, shallow_decay<T>>,
-             typename IsSame = std::is_same<Base, shallow_decay<T>>>
+             typename IsBaseOf = std::is_base_of<Base, std::remove_cvref_t<T>>,
+             typename IsSame = std::is_same<Base, std::remove_cvref_t<T>>>
     using generalize_if_dissimilar = std::conditional_t<
         IsBaseOf::value || IsSame::value, T, generalize<T>>;
 

@@ -29,10 +29,10 @@ struct is_volatile_member;
 //<-
 template<typename T>
 struct is_volatile_member : detail::traits<
-    detail::shallow_decay<T>>::is_volatile_member {
+    std::remove_cvref_t<T>>::is_volatile_member {
 
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::is_volatile_member;
+        std::remove_cvref_t<T>>::is_volatile_member;
 };
 
 //->
@@ -40,7 +40,7 @@ struct is_volatile_member : detail::traits<
 template<typename T>
 inline constexpr bool is_volatile_member_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::is_volatile_member::value;
+    detail::traits<std::remove_cvref_t<T>>::is_volatile_member::value;
 
 }} // namespace boost::callable_traits
 //->

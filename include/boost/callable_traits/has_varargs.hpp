@@ -28,10 +28,10 @@ struct has_varargs;
 //<-
 template<typename T>
 struct has_varargs : detail::traits<
-    detail::shallow_decay<T>>::has_varargs {
+    std::remove_cvref_t<T>>::has_varargs {
 
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::has_varargs;
+        std::remove_cvref_t<T>>::has_varargs;
 };
 
 //->
@@ -39,7 +39,7 @@ struct has_varargs : detail::traits<
 template<typename T>
 inline constexpr bool has_varargs_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::has_varargs::value;
+    detail::traits<std::remove_cvref_t<T>>::has_varargs::value;
 
 }} // namespace boost::callable_traits
 //->

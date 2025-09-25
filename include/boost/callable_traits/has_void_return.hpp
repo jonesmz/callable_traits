@@ -28,7 +28,7 @@ struct has_void_return;
 template<typename T>
 struct has_void_return
     : std::is_same<typename detail::traits<
-        detail::shallow_decay<T>>::return_type, void> {};
+        std::remove_cvref_t<T>>::return_type, void> {};
 
 //->
 
@@ -37,7 +37,7 @@ template<typename T>
 inline constexpr bool has_void_return_v = //see below
 //<-
     std::is_same_v<typename detail::traits<
-        detail::shallow_decay<T>>::return_type, void>;
+        std::remove_cvref_t<T>>::return_type, void>;
 
 }} // namespace boost::callable_traits
 //->

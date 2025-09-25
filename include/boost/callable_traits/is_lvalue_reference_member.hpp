@@ -28,9 +28,9 @@ struct is_lvalue_reference_member;
 //<-
 template<typename T>
 struct is_lvalue_reference_member
-    : detail::traits<detail::shallow_decay<T>>::is_lvalue_reference_member {
+    : detail::traits<std::remove_cvref_t<T>>::is_lvalue_reference_member {
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::is_lvalue_reference_member;
+        std::remove_cvref_t<T>>::is_lvalue_reference_member;
 };
 
 //->
@@ -38,7 +38,7 @@ struct is_lvalue_reference_member
 template<typename T>
 inline constexpr bool is_lvalue_reference_member_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::is_lvalue_reference_member::value;
+    detail::traits<std::remove_cvref_t<T>>::is_lvalue_reference_member::value;
 
 }} // namespace boost::callable_traits
 //->

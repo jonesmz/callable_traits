@@ -27,10 +27,10 @@ struct has_member_qualifiers;
 //<-
 template<typename T>
 struct has_member_qualifiers : detail::traits<
-    detail::shallow_decay<T>>::has_member_qualifiers {
+    std::remove_cvref_t<T>>::has_member_qualifiers {
 
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::has_member_qualifiers;
+        std::remove_cvref_t<T>>::has_member_qualifiers;
 };
 
 //->
@@ -38,7 +38,7 @@ struct has_member_qualifiers : detail::traits<
 template<typename T>
 inline constexpr bool has_member_qualifiers_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::has_member_qualifiers::value;
+    detail::traits<std::remove_cvref_t<T>>::has_member_qualifiers::value;
 
 }} // namespace boost::callable_traits
 //->

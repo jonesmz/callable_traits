@@ -24,7 +24,7 @@ template<typename T>
 using function_type_t = //see below
 //<-
     detail::try_but_fail_if_invalid<typename detail::traits<
-            detail::shallow_decay<T>>::function_type,
+            std::remove_cvref_t<T>>::function_type,
         cannot_determine_parameters_for_this_type>;
 
 namespace detail {

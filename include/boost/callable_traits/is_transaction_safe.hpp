@@ -29,10 +29,10 @@ struct is_transaction_safe;
 //<-
 template<typename T>
 struct is_transaction_safe : detail::traits<
-    detail::shallow_decay<T>>::is_transaction_safe {
+    std::remove_cvref_t<T>>::is_transaction_safe {
 
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::is_transaction_safe;
+        std::remove_cvref_t<T>>::is_transaction_safe;
 };
 
 //->
@@ -40,7 +40,7 @@ struct is_transaction_safe : detail::traits<
 template<typename T>
 inline constexpr bool is_transaction_safe_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::is_transaction_safe::value;
+    detail::traits<std::remove_cvref_t<T>>::is_transaction_safe::value;
 
 }} // namespace boost::callable_traits
 //->

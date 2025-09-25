@@ -27,9 +27,9 @@ struct is_noexcept;
 
 //<-
 template<typename T>
-struct is_noexcept : detail::traits<detail::shallow_decay<T>>::is_noexcept {
+struct is_noexcept : detail::traits<std::remove_cvref_t<T>>::is_noexcept {
     using type = typename detail::traits<
-        detail::shallow_decay<T>>::is_noexcept;
+        std::remove_cvref_t<T>>::is_noexcept;
 };
 
 //->
@@ -37,7 +37,7 @@ struct is_noexcept : detail::traits<detail::shallow_decay<T>>::is_noexcept {
 template<typename T>
 inline constexpr bool is_noexcept_v = //see below
 //<-
-    detail::traits<detail::shallow_decay<T>>::is_noexcept::value;
+    detail::traits<std::remove_cvref_t<T>>::is_noexcept::value;
 
 }} // namespace boost::callable_traits
 //->

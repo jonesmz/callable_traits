@@ -75,9 +75,6 @@ struct force_sfinae {
 };
 
 template<typename T>
-using shallow_decay = std::remove_cv_t<std::remove_reference_t<T>>;
-
-template<typename T>
 struct is_reference_wrapper_t {
     using type = std::false_type;
 };
@@ -89,7 +86,7 @@ struct is_reference_wrapper_t<std::reference_wrapper<T>> {
 
 template<typename T>
 using is_reference_wrapper =
-    typename is_reference_wrapper_t<shallow_decay<T>>::type;
+    typename is_reference_wrapper_t<std::remove_cvref_t<T>>::type;
 
 template<typename T, typename = std::true_type>
 struct unwrap_reference_t {
