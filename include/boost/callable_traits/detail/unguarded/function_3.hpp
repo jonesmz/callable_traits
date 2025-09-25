@@ -27,9 +27,6 @@ BOOST_CLBL_TRTS_NOEXCEPT_SPEC - the noexcept specifier for
 BOOST_CLBL_TRTS_IS_NOEXCEPT - `std::true_type` or `std::false_type`,
     tied on whether BOOST_CLBL_TRTS_NOEXCEPT_SPEC is `noexcept`
 
-BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER - `noexcept` if
-    BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES is defined, otherwise nothing
-
 */
 
 template<typename Return, typename... Args>
@@ -76,7 +73,7 @@ struct function<Return(Args...)
     using add_noexcept = Return(Args...)
         BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS
         BOOST_CLBL_TRTS_INCLUDE_TRANSACTION_SAFE
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        noexcept;
 
     using is_transaction_safe = BOOST_CLBL_TRTS_IS_TRANSACTION_SAFE;
 
@@ -187,7 +184,7 @@ struct function<Return (Args..., ...)
     using add_noexcept = Return(Args..., ...)
         BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS
         BOOST_CLBL_TRTS_INCLUDE_TRANSACTION_SAFE
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        noexcept;
 
     using is_transaction_safe = BOOST_CLBL_TRTS_IS_TRANSACTION_SAFE;
 

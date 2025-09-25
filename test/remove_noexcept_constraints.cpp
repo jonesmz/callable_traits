@@ -10,10 +10,6 @@ Distributed under the Boost Software License, Version 1.0.
 #include <tuple>
 #include "test.hpp"
 
-#ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-int main(){}
-#else
-
 template<typename T>
 struct is_substitution_failure_remove_noexcept {
 
@@ -47,5 +43,3 @@ int main() {
     static_assert(is_substitution_failure_remove_noexcept<void*>::value);
     static_assert(is_substitution_failure_remove_noexcept<void(**)()>::value);
 }
-
-#endif //#ifndef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE

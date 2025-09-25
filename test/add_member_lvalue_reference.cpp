@@ -137,7 +137,6 @@ int main() {
     }
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
 
-    #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
     {
         using f   = void(...) noexcept;
         using l   = void(...) & noexcept;
@@ -166,9 +165,7 @@ int main() {
         static_assert(!std::is_same_v<vr,   TRAIT(add_member_lvalue_reference, vr)>);
         static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
-    #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
 
-    #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
     #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
     {
         using f   = void(...) transaction_safe noexcept;
@@ -199,7 +196,6 @@ int main() {
         static_assert(!std::is_same_v<cvr,  TRAIT(add_member_lvalue_reference, cvr)>);
     }
     #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_TRANSACTION_SAFE
-    #endif // #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
 }
 
 #endif //#ifdef BOOST_CLBL_TRTS_DISABLE_REFERENCE_QUALIFIERS

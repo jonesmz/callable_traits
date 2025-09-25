@@ -34,12 +34,6 @@ using namespace boost::callable_traits;
 #define TRAIT(trait, ...) PP_CAT(trait, _t)<__VA_ARGS__>
 #endif
 
-#ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-#define TEST_NOEXCEPT_QUAL noexcept
-#else
-#define TEST_NOEXCEPT_QUAL
-#endif
-
 #ifdef BOOST_CLBL_TRTS_DISABLE_ABOMINABLE_FUNCTIONS
 #define TEST_ABOM_V
 #else

@@ -30,7 +30,7 @@ struct set_varargs_member_function_qualifiers_t <
 
     using type =
         Return(BOOST_CLBL_TRTS_VARARGS_CC T::*)(Args..., ...)
-        BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS noexcept;
 };
 
 template<typename T, typename Return, typename... Args>
@@ -57,7 +57,7 @@ struct set_varargs_member_function_qualifiers_t <
         Return(BOOST_CLBL_TRTS_VARARGS_CC T::*)(Args..., ...)
             BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS
             BOOST_CLBL_TRTS_TRANSACTION_SAFE_SPECIFIER
-            BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+            noexcept;
 };
 
 #define BOOST_CLBL_TRTS_INCLUDE_TRANSACTION_SAFE

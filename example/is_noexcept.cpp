@@ -7,10 +7,6 @@ Distributed under the Boost Software License, Version 1.0.
 
 #include <boost/callable_traits/detail/config.hpp>
 
-#ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-int main(){}
-#else
-
 //[ is_noexcept
 #include <boost/callable_traits/is_noexcept.hpp>
 
@@ -30,4 +26,3 @@ static_assert(!ct::is_noexcept<int(foo::*)() const>::value);
 
 int main() {}
 //]
-#endif

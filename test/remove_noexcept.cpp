@@ -17,7 +17,7 @@ void test() {
 }
 
 #define TEST_NOEXCEPT(not_noexcept) \
-    test<not_noexcept BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER, not_noexcept>()
+    test<not_noexcept noexcept, not_noexcept>()
 
 int main() {
 

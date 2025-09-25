@@ -6,12 +6,6 @@ Distributed under the Boost Software License, Version 1.0.
 ->*/
 
 #include <boost/callable_traits/detail/config.hpp>
-
-
-#ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-int main(){}
-#else
-
 #include <boost/callable_traits/add_noexcept.hpp>
 #include "test.hpp"
 
@@ -40,6 +34,3 @@ int main() {
     TEST_NOEXCEPT(int(foo::*)(int, ...));
     TEST_NOEXCEPT(int(foo::*)(int, ...) volatile);
 }
-
-#endif // #ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-

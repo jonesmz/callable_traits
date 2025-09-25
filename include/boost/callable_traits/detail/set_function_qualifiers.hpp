@@ -29,7 +29,7 @@ template<typename Return, typename... Args>                        \
 struct set_function_qualifiers_t <                                 \
     flag_map<int QUAL>::value, false, true, Return, Args...> {     \
     using type = Return(Args...) QUAL                              \
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;                        \
+        noexcept;                                                  \
 };                                                                 \
                                                                    \
 template<typename Return, typename... Args>                        \
@@ -37,7 +37,7 @@ struct set_function_qualifiers_t <                                 \
     flag_map<int QUAL>::value, true, true, Return, Args...> {      \
     using type = Return(Args...) QUAL                              \
         BOOST_CLBL_TRTS_TRANSACTION_SAFE_SPECIFIER                 \
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;                        \
+        noexcept;                                                  \
 };                                                                 \
                                                                    \
 template<typename Return, typename... Args>                        \
@@ -57,7 +57,7 @@ template<typename Return, typename... Args>                        \
 struct set_varargs_function_qualifiers_t <                         \
     flag_map<int QUAL>::value, false, true, Return, Args...> {     \
     using type = Return(Args..., ...) QUAL                         \
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;                        \
+        noexcept;                                                  \
 };                                                                 \
                                                                    \
 template<typename Return, typename... Args>                        \
@@ -65,7 +65,7 @@ struct set_varargs_function_qualifiers_t <                         \
     flag_map<int QUAL>::value, true, true, Return, Args...> {      \
     using type = Return(Args..., ...) QUAL                         \
         BOOST_CLBL_TRTS_TRANSACTION_SAFE_SPECIFIER                 \
-        BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;                        \
+        noexcept;                                                  \
 }                                                                  \
 /**/
 

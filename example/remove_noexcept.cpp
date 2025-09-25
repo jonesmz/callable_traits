@@ -7,10 +7,6 @@ Distributed under the Boost Software License, Version 1.0.
 
 #include <boost/callable_traits/detail/config.hpp>
 
-#ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-int main(){}
-#else
-
 //[ remove_noexcept
 #include <type_traits>
 #include <boost/callable_traits/remove_noexcept.hpp>
@@ -25,5 +21,3 @@ static_assert(std::is_same_v<
 int main() {}
 
 //]
-#endif
-

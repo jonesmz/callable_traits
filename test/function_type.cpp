@@ -53,11 +53,11 @@ int main() {
         using F = int (...);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
-        struct G { int operator() (...) volatile BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER; };
+        struct G { int operator() (...) volatile noexcept; };
         using F = int (...);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
-        struct G { int operator() (...) const BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER; };
+        struct G { int operator() (...) const noexcept; };
         using F = int (...);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
@@ -81,15 +81,15 @@ int main() {
         using F = void (foo &, int, int, int);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
-        using G = void (foo::*)() BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        using G = void (foo::*)() noexcept;
         using F = void (foo &);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
-        using G = void (foo::*)(int, int, int) const BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        using G = void (foo::*)(int, int, int) const noexcept;
         using F = void (foo const &, int, int, int);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }{
-        using G = void (foo::*)(int, int, int, ...) const BOOST_CLBL_TRTS_NOEXCEPT_SPECIFIER;
+        using G = void (foo::*)(int, int, int, ...) const noexcept;
         using F = void (foo const &, int, int, int, ...);
         static_assert(std::is_same_v<TRAIT(function_type, G), F>);
     }

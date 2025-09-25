@@ -17,21 +17,6 @@ namespace boost { namespace callable_traits {
 BOOST_CLBL_TRTS_DEFINE_SFINAE_ERROR_ORIGIN(add_noexcept)
 BOOST_CLBL_TRTS_SFINAE_MSG(add_noexcept, cannot_add_noexcept_to_this_type)
 
-#ifndef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
-template<typename T>
-struct add_noexcept_t {
-    static_assert(std::is_same_v<T, detail::dummy>::value,
-        "noexcept types not supported by this configuration.");
-};
-
-template<typename T>
-struct add_noexcept {
-    static_assert(std::is_same_v<T, detail::dummy>::value,
-        "noexcept types not supported by this configuration.");
-};
-
-#else
-
 //[ add_noexcept_hpp
 /*`
 [section:ref_add_noexcept add_noexcept]
@@ -65,7 +50,6 @@ template<typename T>
 struct add_noexcept : detail::add_noexcept_impl<T> {};
 
 //<-
-#endif // #ifdef BOOST_CLBL_TRTS_ENABLE_NOEXCEPT_TYPES
 }} // namespace boost::callable_traits
 //->
 
