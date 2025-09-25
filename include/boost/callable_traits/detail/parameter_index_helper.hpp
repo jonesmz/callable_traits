@@ -12,8 +12,8 @@ struct parameter_index_helper {
     using error_t = error_type<T>;
 
     using args_tuple = typename std::conditional<IgnoreThisPointer,
-        typename detail::traits<T>::non_invoke_arg_types,
-        typename detail::traits<T>::arg_types>::type;
+        typename detail::traits<T>::expand_non_invoke_args<std::tuple>,
+        typename detail::traits<T>::expand_args<std::tuple>>::type;
 
     static constexpr bool has_parameter_list =
         !std::is_same<args_tuple, invalid_type>::value

@@ -45,9 +45,6 @@ struct function<Return(Args...)
 
     using return_type = Return;
 
-    using arg_types = std::tuple<Args...>;
-    using non_invoke_arg_types = arg_types;
-
     using type = Return(Args...)
         BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS
         BOOST_CLBL_TRTS_INCLUDE_TRANSACTION_SAFE
@@ -160,7 +157,6 @@ struct function<Return (Args..., ...)
     using has_varargs = std::true_type;
     using traits = function;
     using return_type = Return;
-    using arg_types = std::tuple<Args...>;
 
     using type = Return (Args..., ...)
         BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS

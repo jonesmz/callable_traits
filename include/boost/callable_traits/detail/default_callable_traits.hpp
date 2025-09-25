@@ -31,17 +31,6 @@ struct default_callable_traits {
     using has_varargs = std::false_type;
     
     using return_type = error_t;
-    
-    // arg_types is a std::tuple of argument types for
-    // callables that are not overloaded/templated function objects.
-    // arg_types IS defined in terms of INVOKE, which means
-    // a PMF's arg_types tuple will use a reference to its
-    // parent class as the first argument, with qualifiers added to
-    // match the PMF's own qualifiers.
-    using arg_types = error_t;
-    
-    // arg_types without the decltype(*this) parameter for member functions
-    using non_invoke_arg_types = error_t;
 
     // An "approximation" of a callable type, in the form
     // of a plain function type. Defined in terms of INVOKE.

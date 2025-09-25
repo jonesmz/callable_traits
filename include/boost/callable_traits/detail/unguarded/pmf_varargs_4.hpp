@@ -55,9 +55,6 @@ struct pmf<Return(BOOST_CLBL_TRTS_VARARGS_CC T::*)(Args..., ...)
         typename std::add_lvalue_reference<T BOOST_CLBL_TRTS_INCLUDE_QUALIFIERS>::type
     >::type;
 
-    using arg_types = std::tuple<invoke_type, Args...>;
-    using non_invoke_arg_types = std::tuple<Args...>;
-
     using function_object_signature = Return(Args..., ...);
 
     using function_type = Return(invoke_type, Args..., ...);

@@ -42,9 +42,6 @@ struct function<BOOST_CLBL_TRTS_ST Return(BOOST_CLBL_TRTS_VARARGS_CC *)(Args...,
 
     using return_type = Return;
 
-    using arg_types = std::tuple<Args...>;
-    using non_invoke_arg_types = arg_types;
-
     using type =
         BOOST_CLBL_TRTS_ST Return(BOOST_CLBL_TRTS_VARARGS_CC *)(Args..., ...)
             BOOST_CLBL_TRTS_INCLUDE_TRANSACTION_SAFE
